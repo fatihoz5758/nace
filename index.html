@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+    .main {
+      width: 250px;
+      margin-top: 120px;
+      text-align: center;
+      background-color: aquamarine;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    input{
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center;
+        margin: 10px;
+    }
+    button{
+        padding: 8px;
+    }
+  </style>
+  <body>
+    <div class="main">
+      <label for="">Nace Kodu</label>
+      <input type="text" id="faliyet" />
+      <label for="">Çalışan Sayısı</label>
+      <input type="number" id="calisan_sayisi" />
+      <button type="button" onclick="sorgula();">sorgula</button>
+      <p id="demo1"></p>
+      <p id="demo2"></p>
+      <p id="demo3"></p>
+    </div>
+    <script>
+      function sorgula() {
+        let naceKodu = document.getElementById("faliyet").value;
+        let calisanSayisi = document.getElementById("calisan_sayisi").value;
+
+        for (let i in kodlar) {
+          if (kodlar[i].kod == naceKodu) {
+            document.getElementById("demo1").innerHTML = kodlar[i].sinif;
+            document.getElementById("demo2").innerHTML = kodlar[i].tanim;
+            if (kodlar[i].sinif == "Tehlikeli") {
+              let dr = 10;
+              let uzm = 20;
+              document.getElementById("demo3").innerHTML =
+                "Doktor:" +
+                dr * calisanSayisi +
+                "," +
+                "Uzman:" +
+                uzm * calisanSayisi;
+              // document.getElementById('demo3').innerHTML = 'Doktor:' + 20*calisanSayisi +',' + 'Uzman:' + 30*calisanSayisi;
+            }
+            if (kodlar[i].sinif == "Az Tehlikeli") {
+              let dr = 5;
+              let uzm = 10;
+              document.getElementById("demo3").innerHTML =
+                "Doktor:" + '<br>'
+                dr * calisanSayisi +
+                "," +
+                "Uzman:" +
+                uzm * calisanSayisi;
+              // document.getElementById('demo3').innerHTML = 'Doktorx:' + 20*calisanSayisi +',' + 'Uzman:' + 30*calisanSayisi;
+            }
+            if (kodlar[i].sinif == "Çok Tehlikeli") {
+              let dr = 15;
+              let uzm = 40;
+              document.getElementById("demo3").innerHTML =
+                "Doktor:" +
+                dr * calisanSayisi +
+                "," +
+                "Uzman:" +
+                uzm * calisanSayisi;
+              // document.getElementById('demo3').innerHTML = 'Doktorx:' + 20*calisanSayisi +',' + 'Uzman:' + 30*calisanSayisi;
+            }
+          }
+        }
+      }
+    </script>
+
+    <script src="nace.js"></script>
+  </body>
+</html>
