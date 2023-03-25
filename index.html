@@ -11,10 +11,11 @@
       padding: 0;
       display: flex;
       justify-content: center;
+      text-align: center;
     }
     .main {
-      width: 250px;
-      margin-top: 120px;
+      width: 400px;
+      margin-top: 50px;
       text-align: center;
       background-color: aquamarine;
       padding: 20px;
@@ -28,18 +29,25 @@
     }
     button{
         padding: 8px;
+        border-radius: 5px;
+    }
+    img{
+      border-radius: 10px;
     }
   </style>
   <body>
-    <div class="main">
-      <label for="">Nace Kodu</label>
-      <input type="text" id="faliyet" />
-      <label for="">Çalışan Sayısı</label>
-      <input type="number" id="calisan_sayisi" />
+    
+    <div class="main"><h1>İş güvenliği <br> Dr ve Uzman Süresi Hesaplama</h1>
+
+      <label for="">Nace Kodu</label><br>
+      <input type="text" id="faliyet" /><br>
+      <label for="">Çalışan Sayısı</label><br>
+      <input type="number" id="calisan_sayisi" /><br>
       <button type="button" onclick="sorgula();">sorgula</button>
       <p id="demo1"></p>
       <p id="demo2"></p>
       <p id="demo3"></p>
+       <img src="vergi-levhasc4b1-c3b6rnec49fi.png" alt="vergi levhası" width="250px">
     </div>
     <script>
       function sorgula() {
@@ -55,8 +63,8 @@
               let uzm = 20;
               document.getElementById("demo3").innerHTML =
                 "Doktor:" +
-                dr * calisanSayisi +
-                "," +
+                dr * calisanSayisi +'<BR>'+
+               
                 "Uzman:" +
                 uzm * calisanSayisi;
               // document.getElementById('demo3').innerHTML = 'Doktor:' + 20*calisanSayisi +',' + 'Uzman:' + 30*calisanSayisi;
@@ -65,10 +73,9 @@
               let dr = 5;
               let uzm = 10;
               document.getElementById("demo3").innerHTML =
-                "Doktor:" + '<br>'
-                dr * calisanSayisi +
-                "," +
-                "Uzman:" +
+                "Doktor:" + 
+                dr * calisanSayisi +'<br>'+
+                 "Uzman:" +
                 uzm * calisanSayisi;
               // document.getElementById('demo3').innerHTML = 'Doktorx:' + 20*calisanSayisi +',' + 'Uzman:' + 30*calisanSayisi;
             }
@@ -78,7 +85,7 @@
               document.getElementById("demo3").innerHTML =
                 "Doktor:" +
                 dr * calisanSayisi +
-                "," +
+                '<BR>' +
                 "Uzman:" +
                 uzm * calisanSayisi;
               // document.getElementById('demo3').innerHTML = 'Doktorx:' + 20*calisanSayisi +',' + 'Uzman:' + 30*calisanSayisi;
