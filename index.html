@@ -1,100 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
 
-    <title>Document</title>
-  </head>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      text-align: center;
-    }
-    .main {
-      width: 400px;
-      margin-top: 50px;
-      text-align: center;
-      background-color: aquamarine;
-      padding: 20px;
-      border-radius: 10px;
-    }
-    input{
-        border-radius: 5px;
-        padding: 10px;
-        text-align: center;
-        margin: 10px;
-    }
-    button{
-        padding: 8px;
-        border-radius: 5px;
-    }
-    img{
-      border-radius: 10px;
-    }
-  </style>
-  <body>
-    
-    <div class="main"><h1>İş güvenliği <br> Dr ve Uzman Süresi Hesaplama</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=fire-animation">
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<title>Tehlike Sınıfı Belirleme</title>
 
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Lato', sans-serif;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .main {
+    width: 80%;
+    max-width: 600px;
+    bottom: 0 5px 15px rgba(1, 0, 0, 0.1);
+    text-align: center;
+    background-color: #F1DEC9;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .hesap {
+    margin: 20px;
+  }
+  input {
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+  }
+  button {
+    padding: 8px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #8D7B68;
+  }
+  img {
+    border-radius: 10px;
+  }
+  label {
+    color: 8D#8D7B68;
+    font-size: 25px;
+  }
+  p{
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+</style>
+</head>
+
+<body>
+
+  <div class="main">
+    <h1>İş güvenliği <br> Dr ve Uzman Süresi <br> Hesaplama</h1>
+    <div class="hesap">
       <label for="">Nace Kodu</label><br>
       <input type="text" id="faliyet" /><br>
       <label for="">Çalışan Sayısı</label><br>
       <input type="number" id="calisan_sayisi" /><br>
       <button type="button" onclick="sorgula();">sorgula</button>
-      <p id="demo1"></p>
-      <p id="demo2"></p>
-      <p id="demo3"></p>
-       <img src="vergi-levhasc4b1-c3b6rnec49fi.png" alt="vergi levhası" width="250px">
     </div>
-    <script>
-      function sorgula() {
-        let naceKodu = document.getElementById("faliyet").value;
-        let calisanSayisi = document.getElementById("calisan_sayisi").value;
 
-        for (let i in kodlar) {
-          if (kodlar[i].kod == naceKodu) {
-            document.getElementById("demo1").innerHTML = kodlar[i].sinif;
-            document.getElementById("demo2").innerHTML = kodlar[i].tanim;
-            if (kodlar[i].sinif == "Tehlikeli") {
-              let dr = 10;
-              let uzm = 20;
-              document.getElementById("demo3").innerHTML =
-                "Doktor:" +
-                dr * calisanSayisi +'<BR>'+
-               
-                "Uzman:" +
-                uzm * calisanSayisi;
-              // document.getElementById('demo3').innerHTML = 'Doktor:' + 20*calisanSayisi +',' + 'Uzman:' + 30*calisanSayisi;
-            }
-            if (kodlar[i].sinif == "Az Tehlikeli") {
-              let dr = 5;
-              let uzm = 10;
-              document.getElementById("demo3").innerHTML =
-                "Doktor:" + 
-                dr * calisanSayisi +'<br>'+
-                 "Uzman:" +
-                uzm * calisanSayisi;
-              // document.getElementById('demo3').innerHTML = 'Doktorx:' + 20*calisanSayisi +',' + 'Uzman:' + 30*calisanSayisi;
-            }
-            if (kodlar[i].sinif == "Çok Tehlikeli") {
-              let dr = 15;
-              let uzm = 40;
-              document.getElementById("demo3").innerHTML =
-                "Doktor:" +
-                dr * calisanSayisi +
-                '<BR>' +
-                "Uzman:" +
-                uzm * calisanSayisi;
-              // document.getElementById('demo3').innerHTML = 'Doktorx:' + 20*calisanSayisi +',' + 'Uzman:' + 30*calisanSayisi;
-            }
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+    <img src="vergi-levhasc4b1-c3b6rnec49fi.png" alt="vergi levhası" width="250px">
+  </div>
+  <script>
+    function sorgula() {
+      let naceKodu = document.getElementById("faliyet").value;
+      let calisanSayisi = document.getElementById("calisan_sayisi").value;
+
+      for (let i in kodlar) {
+        if (kodlar[i].kod == naceKodu) {
+          document.getElementById("demo1").innerHTML = kodlar[i].sinif;
+          document.getElementById("demo2").innerHTML = kodlar[i].tanim;
+          if (kodlar[i].sinif == "Tehlikeli") {
+            let dr = (10/60);
+            let uzm = (20/60);
+            document.getElementById("demo3").innerHTML = 
+            "Doktor : " + Math.ceil(dr * calisanSayisi) + ' ' +'Saat'
+            + '<BR>' + "Uzman : " +
+              Math.ceil(uzm * calisanSayisi) + ' ' +'Saat'   ;
+            // document.getElementById('demo3').innerHTML = 'Doktor:' + 20*calisanSayisi +',' + 'Uzman:' + 30*calisanSayisi;
+          }
+          if (kodlar[i].sinif == "Az Tehlikeli") {
+            let dr = (5/60);
+            let uzm = (10/60);
+            document.getElementById("demo3").innerHTML =
+              "Doktor : " +
+              Math.ceil(dr * calisanSayisi)+ ' '+ 'Saat'  + '<br>' +
+              "Uzman : " +
+              Math.ceil(uzm * calisanSayisi) +' ' +'Saat' ;
+            // document.getElementById('demo3').innerHTML = 'Doktorx:' + 20*calisanSayisi +',' + 'Uzman:' + 30*calisanSayisi;
+          }
+          if (kodlar[i].sinif == "Çok Tehlikeli") {
+            let dr = (15/60);
+            let uzm = (40/60);
+            document.getElementById("demo3").innerHTML =
+              "Doktor : " +
+              Math.ceil(dr * calisanSayisi)+' '+ 'Saat'  +
+              '<BR>' +
+              "Uzman : " +
+              Math.ceil(uzm * calisanSayisi) +' ' + 'Saat' ;
+            // document.getElementById('demo3').innerHTML = 'Doktorx:' + 20*calisanSayisi +',' + 'Uzman:' + 30*calisanSayisi;
           }
         }
       }
-    </script>
+    }
+  </script>
 
-    <script src="nace.js"></script>
-  </body>
+  <script src="nace.js"></script>
+</body>
+
 </html>
