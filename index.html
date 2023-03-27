@@ -19,6 +19,7 @@
     margin: 0;
     padding: 0;
   }
+
   body {
     font-family: 'Lato', sans-serif;
     width: 100%;
@@ -27,6 +28,7 @@
     justify-content: center;
     align-items: center;
   }
+
   .main {
     width: 80%;
     max-width: 600px;
@@ -36,12 +38,16 @@
     padding: 20px;
     border-radius: 10px;
   }
+
   .hesap {
     margin: 20px;
   }
+
   input {
+    width: 70%;
+    max-width: 250px;
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
     margin: 10px;
     font-size: 18px;
@@ -49,20 +55,24 @@
     font-weight: bold;
     border: 0.2px solid black;
   }
+
   button {
     padding: 8px;
     border-radius: 5px;
     color: #fff;
     background-color: #8D7B68;
   }
+
   img {
     border-radius: 10px;
   }
+
   label {
     color: 8D#8D7B68;
     font-size: 25px;
   }
-  p{
+
+  p {
     margin-bottom: 10px;
     font-weight: bold;
   }
@@ -97,33 +107,33 @@
           document.getElementById("demo1").innerHTML = kodlar[i].sinif;
           document.getElementById("demo2").innerHTML = kodlar[i].tanim;
           if (kodlar[i].sinif == "Tehlikeli") {
-            let dr = (10/60);
-            let uzm = (20/60);
-            document.getElementById("demo3").innerHTML = 
-            "Doktor : " + Math.ceil(dr * calisanSayisi) + ' ' +'Saat'
-            + '<BR>' + "Uzman : " +
-              Math.ceil(uzm * calisanSayisi) + ' ' +'Saat'   ;
+            let dr = (10 / 60);
+            let uzm = (20 / 60);
+            document.getElementById("demo3").innerHTML =
+              "Doktor : " + Math.ceil(dr * calisanSayisi) + ' ' + 'Saat'
+              + '<BR>' + "Uzman : " +
+              Math.ceil(uzm * calisanSayisi) + ' ' + 'Saat';
             // document.getElementById('demo3').innerHTML = 'Doktor:' + 20*calisanSayisi +',' + 'Uzman:' + 30*calisanSayisi;
           }
           if (kodlar[i].sinif == "Az Tehlikeli") {
-            let dr = (5/60);
-            let uzm = (10/60);
+            let dr = (5 / 60);
+            let uzm = (10 / 60);
             document.getElementById("demo3").innerHTML =
               "Doktor : " +
-              Math.ceil(dr * calisanSayisi)+ ' '+ 'Saat'  + '<br>' +
+              Math.ceil(dr * calisanSayisi) + ' ' + 'Saat' + '<br>' +
               "Uzman : " +
-              Math.ceil(uzm * calisanSayisi) +' ' +'Saat' ;
+              Math.ceil(uzm * calisanSayisi) + ' ' + 'Saat';
             // document.getElementById('demo3').innerHTML = 'Doktorx:' + 20*calisanSayisi +',' + 'Uzman:' + 30*calisanSayisi;
           }
           if (kodlar[i].sinif == "Çok Tehlikeli") {
-            let dr = (15/60);
-            let uzm = (40/60);
+            let dr = (15 / 60);
+            let uzm = (40 / 60);
             document.getElementById("demo3").innerHTML =
               "Doktor : " +
-              Math.ceil(dr * calisanSayisi)+' '+ 'Saat'  +
+              Math.ceil(dr * calisanSayisi) + ' ' + 'Saat' +
               '<BR>' +
               "Uzman : " +
-              Math.ceil(uzm * calisanSayisi) +' ' + 'Saat' ;
+              Math.ceil(uzm * calisanSayisi) + ' ' + 'Saat';
             // document.getElementById('demo3').innerHTML = 'Doktorx:' + 20*calisanSayisi +',' + 'Uzman:' + 30*calisanSayisi;
           }
         }
